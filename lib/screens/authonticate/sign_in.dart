@@ -1,4 +1,4 @@
-import 'package:brew_crew/models/User.dart';
+import 'package:brew_crew/models/user.dart';
 import 'package:brew_crew/services/auth_service.dart';
 import 'package:brew_crew/share/constants.dart';
 import 'package:brew_crew/share/loading.dart';
@@ -59,7 +59,9 @@ class _SignInState extends State<SignIn> {
                       onChanged: (val) {
                         setState(() => email = val);
                       },
+                      keyboardType: TextInputType.emailAddress,
                     ),
+                    SizedBox(height: 20),
                     TextFormField(
                       validator: (val) =>
                           val.length < 6 ? 'Enter a password 6+' : null,

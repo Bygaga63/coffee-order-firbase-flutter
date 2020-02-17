@@ -58,7 +58,9 @@ class _RegisterState extends State<Register> {
                       onChanged: (val) {
                         setState(() => email = val);
                       },
+                      keyboardType: TextInputType.emailAddress,
                     ),
+                    SizedBox(height: 20),
                     TextFormField(
                       validator: (val) =>
                           val.length < 6 ? 'Enter a password 6+' : null,

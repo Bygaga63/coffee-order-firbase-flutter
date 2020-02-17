@@ -1,4 +1,4 @@
-import 'package:brew_crew/models/User.dart';
+import 'package:brew_crew/models/user.dart';
 import 'package:brew_crew/screens/authonticate/autonticate.dart';
 import 'package:brew_crew/screens/home/home.dart';
 import 'package:flutter/material.dart';
