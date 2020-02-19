@@ -1,5 +1,6 @@
 # brew_crew
 
+![View](assets/screen.PNG)
 Получить значения виджета из state
 ```
    widget.toggleView();

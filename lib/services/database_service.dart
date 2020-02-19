@@ -40,7 +40,7 @@ class DatabaseService {
     );
   }
 
-  Stream<UserData> get getUserData {
-    return brewCollection.document(uid).snapshots().map(_userDataFromSnapshot).;
+  Stream<UserData> get userData {
+    return brewCollection.document(uid).snapshots().map(_userDataFromSnapshot);
   }
 }

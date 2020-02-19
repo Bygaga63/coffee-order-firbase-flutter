@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:brew_crew/models/brew.dart';
 import 'package:brew_crew/screens/home/brew_list.dart';
 import 'package:brew_crew/screens/home/settings_form.dart';
@@ -13,11 +15,19 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     void _showSettingsPanel() {
       showModalBottomSheet(
+          isScrollControlled: true,
           context: context,
           builder: (context) {
-            return Container(
-              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-              child: SettingsForm(),
+            return SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.fromLTRB(
+                  60.0,
+                  20.0,
+                  60.0,
+                  20.0 + MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: SettingsForm(),
+              ),
             );
           });
     }
@@ -49,6 +59,12 @@ class Home extends StatelessWidget {
           ],
         ),
         body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    'assets/coffee_bg.png',
+                  ))),
           child: BrewList(),
         ),
       ),
